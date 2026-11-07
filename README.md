@@ -2,6 +2,8 @@
 Here are some tips to run quakeworld client on Linux with maximum FPS.
 
 Setup shows 20000fps for 1280x720 with FSR to 2560x1440 on povdmm4.
+
+![20000fps](ezquake046.jpg)
 # System setup
 * MAG B650 TOMAHAWK WIFI (MS-7D75)
 * AMD Ryzen 7 9850X3D 8-Core Processor
