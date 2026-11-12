@@ -1,38 +1,92 @@
-Install linux custom kernel special for gaming (be aware of time to compile
-the kernel and memory for compiler. I used llvm clang.
- 
-# First step install lattest llvm clang compiller
-```
-cat  /etc/apt/sources.list.d/archive_uri-https_apt_llvm_org_resolute_-resolute.list 
-  deb https://apt.llvm.org/resolute/ llvm-toolchain-resolute-23 main
-  # deb-src https://apt.llvm.org/resolute/ llvm-toolchain-resolute-23 main
+Here's a cleaned-up, nicely formatted version of that instruction guide:
+
+---
+
+# 🎮 Installing a Custom Gaming Kernel (Ubuntu)
+
+> ⚠️ **Before you start:** Be aware that kernel compilation is time-consuming and memory-intensive. This guide uses LLVM Clang as the compiler.
+
+---
+
+## 📦 Step 1 — Install the Latest LLVM Clang Compiler
+
+Add the LLVM APT repository to `/etc/apt/sources.list.d/`:
+
+```bash
+vi /etc/apt/sources.list.d/archive_uri-https_apt_llvm_org_resolute_-resolute.list
 ```
 
-# Than get and compile the kernel
-https://github.com/frogging-family/linux-tkg
+Contents of the file:
 
+```ini
+deb https://apt.llvm.org/resolute/ llvm-toolchain-resolute-23 main
+# deb-src https://apt.llvm.org/resolute/ llvm-toolchain-resolute-23 main
+```
+
+Then update and install:
+
+```bash
+sudo apt update
+sudo apt install clang llvm lld
+```
+
+---
+
+## 🐧 Step 2 — Get and Compile the Kernel
+
+We'll use [linux-tkg](https://github.com/frogging-family/linux-tkg) by Frogging Family.
+
+```bash
 git clone https://github.com/Frogging-Family/linux-tkg.git
 cd linux-tkg
 ./install.sh install
-3) Ubuntu
-> 0) v7.3.4
- > eevdf:
-1) Clang/LLVM
-1) Full: 
-znver5:
-> 5) 1000 Hz
-> 2) Just tickless idle plz
-> N/y : 
-Found config fragment nvme.myfrag, apply it? [y/N]  - y
-> 0. nope
-
-note for nvme.myfrag - it needed to boot kernel from nvme disk
-```
-cat nvme.myfrag 
-  CONFIG_BLK_DEV_NVME=y
-  CONFIG_NVME_CORE=y
 ```
 
-# After all reboot and check for new kernel 
+### Interactive Menu Choices
+
+Follow the prompts and select the following options:
+
+| Prompt | Selection |
+|---|---|
+| Distribution | `3) Ubuntu` |
+| Kernel version | `0) v7.3.4` |
+| Scheduler | `eevdf` |
+| Compiler | `1) Clang/LLVM` |
+| Build type | `1) Full` |
+| CPU optimization | `znver5` (or your CPU arch) |
+| Timer frequency | `5) 1000 Hz` |
+| Tick mode | `2) Just tickless idle plz` |
+| Apply `nvme.myfrag`? | `y` |
+| Final prompt | `0. nope` |
+
+> 💡 **Note on `nvme.myfrag`:** This config fragment is required to boot the kernel from an NVMe disk.
+
+### The `nvme.myfrag` file
+
+```ini
+CONFIG_BLK_DEV_NVME=y
+CONFIG_NVME_CORE=y
+```
+
+---
+
+## 🔁 Step 3 — Reboot and Verify
+
+```bash
 reboot
 uname -a
+```
+
+You should see the newly compiled kernel listed in the output. 🎉
+
+---
+
+### ✅ Summary Checklist
+
+- [ ] LLVM Clang toolchain installed
+- [ ] `linux-tkg` repo cloned
+- [ ] Kernel configured for gaming (1000 Hz, tickless idle, Clang)
+- [ ] `nvme.myfrag` applied
+- [ ] System rebooted and new kernel confirmed via `uname -a`
+
+---
