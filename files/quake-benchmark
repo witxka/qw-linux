@@ -1,0 +1,49 @@
+#!/bin/bash
+
+iterations=3
+exe="./unezquake-linux-x86_64"
+demo="fps5" #https://nicotinelounge.com/quake/demos_backup/fps/fps5.mvd
+demofps=77 #default 308
+
+#reset all config options for run
+extra="-nosound -no-triple-gl-buffer +cfg_reset +sys_highpriority 1 +gl_no24bit 1 +gl_externaltextures_world 0 +gl_externaltextures_bmodels 0 +gl_multisamples 0 +gl_anisotropy 0 +gl_texturemode gl_nearest_mipmap_linear +r_smoothcrosshair 0 +r_smoothimages 0 +r_smoothtext 0 +vid_framebuffer 0 +vid_software_palette 0 +scr_autoid 0 +hud_gameclock_show 0 +scr_newhud 1 +gl_polyblend 0 +vid_restart +wait"
+tmpoutput="/tmp/quakebenchoutput"
+
+echo -e "running $iterations timedemos of ${demo} at ${demofps}fps...\n"
+
+echo > $tmpoutput
+
+jobs=()
+trap 'kill "${jobs[@]}"' EXIT
+
+
+tail -F $tmpoutput |\
+	while IFS= read -r line; do
+		echo "$line"|grep -i '.*frames.*seconds.*fps' >/dev/null 2>&1 && echo "version" | tee /tmp/ezquake_fifo_* >/dev/null
+		echo "$line"|grep -i '^Compiled with' >/dev/null 2>&1 && echo quit | tee /tmp/ezquake_fifo_* >/dev/null
+	done&
+jobs+=($!)
+
+tail -F $tmpoutput|grep '.*frames.*seconds.*fps' &
+jobs+=($!)
+
+let count=0
+while [ $count -lt $iterations ]; do
+	$exe $extra +timedemo2 demos/$demo $demofps -condebug /dev/stdout >> $tmpoutput 2>&1 || break
+	let count=count+1
+done
+
+#get system info
+gpu=$(sed -n '/^OpenGL.\+/,/^\s*Version:/{/Version:/{q}};s/.*Renderer:\s*\(.*\)/\1/p' $tmpoutput | head -n1)
+cpu=$(sed -n 's/^model name\s*:\s*\(.*\)$/\1/p' /proc/cpuinfo | head -n1)
+res=$(sed -n '/^Video.\+/,/^\s*Resolution:/{/Format:/{q}};s/.*Resolution:\s*\(.*\)/\1/p' $tmpoutput | head -n1)
+ver=$(sed -n '/^ezQuake .\+/,/^\s*Exe:/{/Exe:/{q}};s/^\(ezQuake\s*\).*&c1e1\(.\+\)&r/\1\2/p' $tmpoutput | head -n1)
+
+echo ""
+
+echo "CPU: ${cpu:-NA}"
+echo "GPU: ${gpu:-NA}"
+echo "Resolution: ${res:-NA}"
+echo "Version: ${ver:-NA}"
+
+exit 0
