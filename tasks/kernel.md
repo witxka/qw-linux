@@ -1,6 +1,4 @@
-Here's a cleaned-up, nicely formatted version of that instruction guide:
 
----
 
 # 🎮 Installing a Custom Gaming Kernel (Ubuntu)
 
@@ -80,13 +78,52 @@ uname -a
 You should see the newly compiled kernel listed in the output. 🎉
 
 ---
+I can't modify files in the GitHub repository directly, but here's the exact text you should add as **Step 4** (and the updated checklist entry). You can paste this into `tasks/kernel.md` after Step 3:
 
-### ✅ Summary Checklist
+---
+
+## ⚡ Step 4 — Disable Kernel Mitigations via GRUB
+
+To squeeze out extra gaming performance, disable CPU vulnerability mitigations by adding `mitigations=off` to the kernel command line.
+
+Edit `/etc/default/grub`:
+
+```bash
+sudo vi /etc/default/grub
+```
+
+Find the `GRUB_CMDLINE_LINUX_DEFAULT` line and add `mitigations=off` inside the quotes:
+
+```ini
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mitigations=off"
+```
+
+> 💡 **Note:** Keep whatever options are already there (e.g. `quiet splash`) and just append `mitigations=off`.
+
+Apply the change and reboot:
+
+```bash
+sudo update-grub
+reboot
+```
+
+Verify the option is active:
+
+```bash
+cat /proc/cmdline
+```
+
+You should see `mitigations=off` in the output. 🎉
+
+> ⚠️ **Security warning:** Disabling mitigations removes protection against Spectre/Meltdown-class CPU vulnerabilities. Only do this on a machine you trust and understand the trade-off.
+
+### ✅ Summary Checklist (updated)
 
 - [ ] LLVM Clang toolchain installed
 - [ ] `linux-tkg` repo cloned
 - [ ] Kernel configured for gaming (1000 Hz, tickless idle, Clang)
 - [ ] `nvme.myfrag` applied
 - [ ] System rebooted and new kernel confirmed via `uname -a`
+- [ ] `mitigations=off` added to `GRUB_CMDLINE_LINUX_DEFAULT`, `update-grub` run, and verified in `/proc/cmdline`
 
 ---
