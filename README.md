@@ -99,4 +99,5 @@ Version: NA
 
 > All steps can be used **separately** — this repository simply gathers them all in one place.
 
+> 🤖 **AI Disclosure:** The text formatting and editing for this documentation was assisted by **DeepSeek AI**. All technical content, configurations, and testing were performed by the author.
 ---
