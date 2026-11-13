@@ -1,0 +1,1 @@
+{"gpus":{"1002:7550-148C:2435-0000:03:00.0":{"fan_control_enabled":false,"pmfw_options":{"minimum_pwm":70,"target_temperature":85,"zero_rpm":true,"zero_rpm_threshold":50},"power_cap":374.0,"performance_level":"manual","voltage_offset":-100,"power_profile_mode_index":1}}}
