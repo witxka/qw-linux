@@ -1,4 +1,3 @@
-Here's a cleaned-up, nicely formatted version of that Radeon setup guide:
 
 ---
 
