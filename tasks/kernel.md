@@ -78,9 +78,6 @@ uname -a
 You should see the newly compiled kernel listed in the output. 🎉
 
 ---
-I can't modify files in the GitHub repository directly, but here's the exact text you should add as **Step 4** (and the updated checklist entry). You can paste this into `tasks/kernel.md` after Step 3:
-
----
 
 ## ⚡ Step 4 — Disable Kernel Mitigations via GRUB
 
