@@ -54,6 +54,17 @@ gamemoded -t
 
 > ✅ A successful run reports all tests as **passed**, confirming the daemon and client library work.
 
+# Section 4 — GameMode Configuration
+
+GameMode reads its configuration from `/etc/gamemode.ini`. The file is divided into sections that control different aspects of behavior: `[general]`, `[filter]`, `[gpu]`, `[cpu]`, `[supervisor]`, and `[custom]`.
+
+An example configuration file is provided in `files/gamemode.ini`. To install it:
+
+```bash
+sudo cp files/gamemode.ini /etc/gamemode.ini
+```
+
+> 💡 **Tip:** After editing `/etc/gamemode.ini`, the reaper thread picks up changes automatically (every `reaper_freq` seconds, default 5) — no daemon restart is required.
 ---
 
 ### ✅ Summary Checklist
@@ -62,6 +73,5 @@ gamemoded -t
 - [ ] `gamemode` repo cloned
 - [ ] Built and installed via `./bootstrap.sh`
 - [ ] `gamemoded -t` passes all tests
-
+- [ ] Example config copied to `/etc/gamemode.ini`
 ---
-
