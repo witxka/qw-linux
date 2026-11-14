@@ -1,0 +1,37 @@
+<mxfile host="Electron">
+  <diagram name="Страница-1" id="gs5uLzH_Qgx1RwdBH1tR">
+    <mxGraphModel dx="1461" dy="870" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="uP4tBKb2cwPG-1zFwH_l-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#fff2cc;strokeColor=#d6b656;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;labelPerimeter=1;" value="Hardware level&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;Motherboard&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="460" x="310" y="1090" as="geometry" />
+        </mxCell>
+        <mxCell id="uP4tBKb2cwPG-1zFwH_l-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;CPU&lt;/b&gt;" vertex="1">
+          <mxGeometry height="20" width="50" x="320" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="uP4tBKb2cwPG-1zFwH_l-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;RAM&lt;/b&gt;" vertex="1">
+          <mxGeometry height="20" width="50" x="390" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="uP4tBKb2cwPG-1zFwH_l-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#ffe6cc;strokeColor=#d79b00;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;labelPerimeter=1;" value="Video card" vertex="1">
+          <mxGeometry height="50" width="20" x="490" y="1105" as="geometry" />
+        </mxCell>
+        <mxCell id="uP4tBKb2cwPG-1zFwH_l-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#ffe6cc;strokeColor=#d79b00;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;labelPerimeter=1;" value="USB card" vertex="1">
+          <mxGeometry height="50" width="20" x="550" y="1105" as="geometry" />
+        </mxCell>
+        <mxCell id="uP4tBKb2cwPG-1zFwH_l-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;labelPerimeter=1;fillColor=#000000;fontStyle=1" value="PCI-E" vertex="1">
+          <mxGeometry height="2" width="170" x="450" y="1158" as="geometry" />
+        </mxCell>
+        <mxCell id="uP4tBKb2cwPG-1zFwH_l-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#d5e8d4;strokeColor=#82b366;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;labelPerimeter=1;" value="&lt;b&gt;Chipset&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="125" x="635" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="uP4tBKb2cwPG-1zFwH_l-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#ffe6cc;strokeColor=#d79b00;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;labelPerimeter=1;" value="USB" vertex="1">
+          <mxGeometry height="50" width="20" x="640" y="1105" as="geometry" />
+        </mxCell>
+        <mxCell id="uP4tBKb2cwPG-1zFwH_l-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#ffe6cc;strokeColor=#d79b00;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;labelPerimeter=1;" value="Sound" vertex="1">
+          <mxGeometry height="50" width="20" x="695" y="1105" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
