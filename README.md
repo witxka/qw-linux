@@ -7,7 +7,7 @@
 
 This setup achieves **20000 FPS** at 1280×720 with FSR upscaling to 2560×1440 on `povdmm4`.
 
-![20000fps](ezquake046.jpg)
+![20000fps](images/ezquake046.jpg)
 
 ---
 
