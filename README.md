@@ -36,6 +36,7 @@ This setup achieves **20000 FPS** at 1280×720 with FSR upscaling to 2560×1440 
 
 ## 📋 Setup Tasks
 
+- [Architecture](tasks/architecture.md) — overview of all tuning layers
 - [Peripherals](tasks/peripherals.md)
 - [Kernel](tasks/kernel.md)
 - [Scheduler](tasks/scheduler.md)
