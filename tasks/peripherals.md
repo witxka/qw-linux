@@ -28,6 +28,6 @@
 ### ✅ Summary Checklist
 
 - [ ] G-Wolves HSK Pro 8K polling rate set to 8K Hz
-- [ ] NuPhy Air75 HE profile set to ASDW oriented (fast AD&WD detect)
+- [ ] NuPhy Air75 HE profile set to WASD oriented (fast AD&WD detect)
 
 ---
