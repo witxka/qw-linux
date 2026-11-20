@@ -36,7 +36,7 @@ sleep 0.5  # give it a moment to attach
 # --- Run gamescope in foreground ---
 echo "[run] launching gamescope..." # remove -w -h to do not use FSR features
 gamescope -w 1920 -h 1080 -W 2560 -H 1440 -r 0 --adaptive-sync -f \
-    --force-grab-cursor --backend sdl -- \
+    --force-composition --force-grab-cursor --backend sdl -- \
     gamemoderun ./unezquake-linux-x86_64
 
 # --- When gamescope exits, cleanup runs via trap ---

@@ -100,5 +100,7 @@ Version: NA
 
 > All steps can be used **separately** — this repository simply gathers them all in one place.
 
+> benchmark script has been taken from Ciscon project https://github.com/ciscon/quake-bootable
+
 > 🤖 **AI Disclosure:** The text formatting and editing for this documentation was assisted by **DeepSeek AI**. All technical content, configurations, and testing were performed by the author.
 ---
